@@ -1,4 +1,4 @@
-/* RESET A ZÁKLADNÍ STYLY */
+/* CSS */
 * {
     margin: 0;
     padding: 0;
@@ -9,10 +9,12 @@ body {
     background: #000;
     min-height: 100vh;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-family: Arial, sans-serif;
 }
 
-/* HVĚZDNÉ POZADÍ */
 #hvezdy-container {
     position: fixed;
     top: 0;
@@ -29,22 +31,12 @@ body {
     animation: blikani infinite ease-in-out;
 }
 
-@keyframes blikani {
-    0%, 100% { opacity: 0.2; transform: scale(1); }
-    50% { opacity: 1; transform: scale(1.8); }
-}
-
-/* TEXT S ODKAZY */
 .links-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: relative;
     z-index: 2;
     display: flex;
     gap: 4rem;
-    margin: 0;
-    padding: 0;
+    padding: 20px;
 }
 
 .gradient-link {
@@ -59,13 +51,16 @@ body {
     text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
     display: inline-block;
     text-decoration: none;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
     transform-origin: center;
-    transform: translateY(0);
-    padding: 0 15px;
 }
 
 .gradient-link:hover {
     transform: scale(1.1);
     text-shadow: 4px 4px 8px rgba(0,0,0,0.3);
+}
+
+@keyframes blikani {
+    0%, 100% { opacity: 0.2; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.8); }
 }
