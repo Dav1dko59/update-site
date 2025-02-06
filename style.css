@@ -16,17 +16,18 @@ body {
 }
 
 .links-container {
-    position: absolute;
+    position: relative;
     z-index: 2;
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
     display: flex;
-    flex-direction: column;
-    gap: 2rem;
+    gap: 4rem;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
 }
 
 .gradient-link {
+    /* Zůstává původní styl textu */
     font-size: clamp(2rem, 8vw, 5rem);
     font-weight: bold;
     text-transform: uppercase;
@@ -39,12 +40,13 @@ body {
     display: inline-block;
     text-decoration: none;
     transition: transform 0.3s ease;
-    transform-origin: left;
-    transform: translateY(0); /* Přidáno pro konzistenci */
+    transform-origin: center; /* Změněno na střed pro lepší efekt */
+    transform: translateY(0);
+    padding: 0 15px; /* Přidáno pro lepší rozestupy */
 }
 
 .gradient-link:hover {
-    transform: scale(1.1) translateY(0); /* Původní kombinace */
+    transform: scale(1.1) translateY(-5px); /* Přidán vertikální pohyb */
     text-shadow: 4px 4px 8px rgba(0,0,0,0.3);
 }
 
