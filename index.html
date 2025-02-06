@@ -16,9 +16,13 @@
     </div>
 
     <script>
-        // Generování hvězd
         function createStars() {
             const container = document.querySelector('.hvezdy');
+            
+            // Vytvoříme černé pozadí jako základ
+            container.style.backgroundColor = '#000';
+            
+            // Generování hvězd
             for (let i = 0; i < 200; i++) {
                 const star = document.createElement('div');
                 star.className = 'hvezda';
