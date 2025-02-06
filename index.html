@@ -1,15 +1,15 @@
-
+<!-- HTML -->
 <!DOCTYPE html>
 <html lang="cs">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Update</title>
+    <title>Gradientní odkazy s hvězdami</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="/images/update_favicon.png" type="image/x-icon">
 </head>
 <body>
-    <div class="hvezdy"></div>
+    <div id="hvezdy-container"></div>
     
     <div class="links-container">
         <a href="https://github.com" class="gradient-link" target="_blank">GitHub</a>
@@ -17,24 +17,22 @@
     </div>
 
     <script>
-        function createStars() {
-            const container = document.querySelector('.hvezdy');
-            
-            // Vytvoříme černé pozadí jako základ
-            container.style.backgroundColor = '#000';
+        function vytvorHvezdy() {
+            const container = document.getElementById('hvezdy-container');
             
             // Generování hvězd
-            for (let i = 0; i < 200; i++) {
-                const star = document.createElement('div');
-                star.className = 'hvezda';
-                star.style.left = `${Math.random() * 100}%`;
-                star.style.top = `${Math.random() * 100}%`;
-                star.style.width = star.style.height = `${Math.random() * 3}px`;
-                star.style.setProperty('--duration', `${Math.random() * 3 + 1}s`);
-                container.appendChild(star);
+            for(let i = 0; i < 200; i++) {
+                const hvezda = document.createElement('div');
+                hvezda.className = 'hvezda';
+                hvezda.style.left = Math.random() * 100 + '%';
+                hvezda.style.top = Math.random() * 100 + '%';
+                hvezda.style.width = hvezda.style.height = Math.random() * 3 + 'px';
+                hvezda.style.animationDuration = Math.random() * 3 + 1 + 's';
+                container.appendChild(hvezda);
             }
         }
-        createStars();
+        
+        window.onload = vytvorHvezdy;
     </script>
 </body>
 </html>
