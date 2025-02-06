@@ -15,10 +15,9 @@ body {
     z-index: 0;
 }
 
-/* Zbytek CSS zůstává stejný jako v předchozí odpovědi */
 .links-container {
     position: absolute;
-    z-index: 1;
+    z-index: 2;
     left: 10px;
     top: 50%;
     transform: translateY(-50%);
@@ -41,10 +40,11 @@ body {
     text-decoration: none;
     transition: transform 0.3s ease;
     transform-origin: left;
+    transform: translateY(0); /* Přidáno pro konzistenci */
 }
 
 .gradient-link:hover {
-    transform: scale(1.1) translateY(0);
+    transform: scale(1.1) translateY(0); /* Původní kombinace */
     text-shadow: 4px 4px 8px rgba(0,0,0,0.3);
 }
 
