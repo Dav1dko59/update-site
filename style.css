@@ -64,3 +64,38 @@ body {
     0%, 100% { opacity: 0.2; transform: scale(1); }
     50% { opacity: 1; transform: scale(1.8); }
 }
+.update-switch {
+    border-radius: 0px;
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+    position: absolute;
+    z-index: 1; /* Text bude nad hvězdami */
+    right: 1%; 
+    top: 7%; /* Posune horní okraj kontejneru do středu */
+    height: 10%;
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.update-text {
+    font-size: clamp(2rem, 1vw, 5rem);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    background: linear-gradient(45deg, #2c3e50, #3498db);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    display: inline-block;
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+    transform-origin: right;
+    margin-right: 10px;
+}
+.update-switch:hover{
+  transform: scale(1.1) translateX(-10px); /* Posun doľava */
+  transform-origin: right; /* Zabezpečí, že scaling začína sprava */
+  text-shadow: -4px 4px 8px rgba(0, 0, 0, 0.3); /* Tieň na ľavej strane */
+}
